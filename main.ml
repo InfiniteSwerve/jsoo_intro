@@ -1,3 +1,9 @@
+
+(* Dom_html is the data representation of structure and content that make up a 
+  document on the web. It's a tree structure, and is how programming languages
+  interact with web content. 
+  https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
+  *)
 module Html = Js_of_ocaml.Dom_html
  
 module Js = Js_of_ocaml.Js
