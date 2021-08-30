@@ -15,18 +15,18 @@ let create_canvas () =
   r##.height := int_of_float canvas_height;
   r
 
-let draw_things c = 
-  c##.font := js "50px serif";
-  c##fillText (js "Hello World") 20. 90.;
-  c##strokeRect 0. 0. canvas_width canvas_height
+let draw_things context = 
+  context##.font := js "50px serif";
+  context##fillText (js "Hello World") 20. 90.;
+  context##strokeRect 0. 0. canvas_width canvas_height
   
 
 let main _ =
   let canvas = create_canvas () in
   G.open_canvas canvas;
   Js_of_ocaml.Dom.appendChild doc##.body canvas;
-  let c = canvas##getContext Html._2d_ in
-  draw_things c |> ignore;
+  let context = canvas##getContext Html._2d_ in
+  draw_things context |> ignore;
   Js._true
 
 let _ =
